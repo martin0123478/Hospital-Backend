@@ -1,12 +1,13 @@
 const express = require('express');
+require('dotenv').config();
 const {dbConection} = require('./database/config')
 //crear el servidor de expres
 const app = express();
 
 //Base de Datos
 dbConection();
-//HTptP48IUd8cQAHU
-//mean_user
+
+
 //rutas
 app.get('/', (req,res) =>{
   res.json({
@@ -14,6 +15,6 @@ app.get('/', (req,res) =>{
     msg:'Hola mundo'
   })
 });
-app.listen(3000, () =>{
-  console.log('Servidos corriendo en puerto ' + 3000)
+app.listen(process.env.PORT, () =>{
+  console.log('Servidos corriendo en puerto ' + process.env.PORT)
 })
