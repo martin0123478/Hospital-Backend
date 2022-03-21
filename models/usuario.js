@@ -27,6 +27,6 @@ const UsuarioSchema = Schema({
     type:Boolean,
     default:false
   }
-})
+},{collection:'hospitales'})
 
 module.exports = model('Usuario', UsuarioSchema)
