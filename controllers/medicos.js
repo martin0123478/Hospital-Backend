@@ -1,4 +1,3 @@
-
 const getMedicos = (req,res ) =>{
   res.json({
     ok:true,
@@ -6,12 +5,17 @@ const getMedicos = (req,res ) =>{
   })
 }
 
-const crearMedicos = (req,res ) =>{
-  res.json({
-    ok:true,
-    msg:'crerar medico'
-  })
-}
+const crearMedicos = async(req,res ) =>{
+  
+    res.json({
+      ok:true,
+      msg:'crear medico'
+    })
+  
+  
+  }
+ 
+
 const actualizarMedicos= (req,res ) =>{
   res.json({
     ok:true,
