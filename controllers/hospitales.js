@@ -1,9 +1,11 @@
 const Hospital = require('../models/hospital')
 
-const getHospitales = (req,res ) =>{
+const getHospitales = async(req,res ) =>{
+  const hospitales = await Hospital.find()
+                                    .populate('usuario','nombre')
   res.json({
     ok:true,
-    msg:'get Hospitales'
+    hospitales
   })
 }
 

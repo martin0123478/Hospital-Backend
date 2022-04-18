@@ -24,11 +24,13 @@ const crearMedicos = async (req,res ) =>{
 }
 
 const getMedicos = async(req,res ) =>{
-  
+  const medicos = await Medico.find()
+                              .populate('usuario','nombre')
+                              .populate('hospital','nombre')
     res.json({
       ok:true,
-      msg:'obtener medico'
-    })
+      medicos    
+  })
   
   
   }
