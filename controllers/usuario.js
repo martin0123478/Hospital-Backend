@@ -4,7 +4,11 @@ const Usuario = require('../models/usuario')
 const bcrypt = require('bcryptjs')
 const { generarJWT } = require('../helpers/jwt')
 const getUsuarios = async(req,res) =>{
+  const desde = Number( req.query.desde) || 0;
+  console.log(desde)
   const usuarios =await Usuario.find({}, 'nombre email role google')
+                                .skip(desde)
+                                .limit(5)
   
   res.json({
     ok:true,
