@@ -1,8 +1,10 @@
+const { actualizarImagen } = require('../helpers/actualizar-imagen');
+
 const fileUpload = (req,res) =>{
 const { v4 : uuidv4 } = require ('uuid');
   const tipo = req.params.tipo;
   console.log(tipo)
-  const id = req.param.id;
+  const id = req.params.id;
 
   const tiposValidos = ['hospitales','medicos','usuarios']
   if(!tiposValidos.includes(tipo)){
@@ -54,6 +56,9 @@ const { v4 : uuidv4 } = require ('uuid');
 
     }
 
+    //actualizar base de datos
+
+    actualizarImagen(tipo,id,nombreArchivo);
     res.json({
       ok:true,
      msg:'Archivo subido',
