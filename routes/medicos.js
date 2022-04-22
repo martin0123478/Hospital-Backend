@@ -23,8 +23,11 @@ router.post('/',
 
 router.put('/:id',
     [
-      
+      validarJWT,
+      check('nombre','el nombre es necesario').not().isEmpty(),
+      validarCampos
+
   ],actualizarMedicos);
 
-  router.delete('/:id',borarMedicos)
+  router.delete('/:id',validarJWT,borarMedicos)
 module.exports = router;
