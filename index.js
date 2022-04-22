@@ -11,6 +11,8 @@ app.use(cors());
 app.use(express.json());
 //Base de Datos
 dbConection();
+//drectorio publico
+app.use(express.static('public'))
 
 
 //rutas
